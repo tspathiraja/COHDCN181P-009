@@ -2,7 +2,7 @@ i=0
 s=0
 while True:
     a=raw_input("Enter Value: ")
-    if a=='':                         #press 'enter key' loop end & print s
+    if a=='':                         #press 'enter key' loop end
         break
     elif a.isdigit()==True:           #check value'a' is type int
         i=int(a)
