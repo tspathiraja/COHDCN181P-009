@@ -18,11 +18,11 @@ def xxd(file_path):
         ch=[]
         for c in d:
             cc=ord(c)
-            if cc<32:
+            if cc<32 or cc>127:
                 ch.append('.')
             else:
                 ch.append(c)
-        step=('%07x'%(s*16))
+        step=('%08x'%(s*16))
         print('{0}: {1:<39} {2}'.format(step,' '.join(he2),''.join(ch)))
         s=s+1
 
