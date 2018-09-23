@@ -38,12 +38,12 @@ try:
         typ, code, checksum, ID, sequence = struct.unpack("!bbHHh", icmpHeader)
         icmpseq = (sequence - (255 * z))
         last_time = ('%.3f'%((come - sen) * 1000))
-        z=z+1
-        
+               
         if typ == 0:
             print('from {0}: icmp_seq={1} ttl={2} time={3}ms'.format(socket.inet_ntoa(src), icmpseq, ttl, last_time))
         elif typ == 3:
             print('From {0}: icmp_seq={1} {2}'.format(socket.inet_ntoa(drc), z, 'Destination Host Unreachable'))
+        z=z+1
         time.sleep(1)
             
 except KeyboardInterrupt:
