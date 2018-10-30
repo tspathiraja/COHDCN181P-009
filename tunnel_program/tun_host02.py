@@ -16,16 +16,6 @@ IFF_TUN = 0x0001
 IFF_TAP = 0x0002
 IFF_NO_PI = 0x1000
 
-def chksum(msg):
-    s = 0
-    for i in range(0, len(msg), 2):
-        a = ord(msg[i])
-        b = ord(msg[i+1])
-        s = s + (a+(b << 8))
-    s = s + (s >> 16)
-    s = ~s & 0xffff
-    return s
-
 # Open TUN device file.
 tun = open('/dev/net/tun', 'r+b')
 # Tall it we want a TUN device named tun0.
